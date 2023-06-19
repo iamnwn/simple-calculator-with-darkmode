@@ -9,6 +9,7 @@ let display_input = document.querySelector(
 let display_output = document.querySelector(
   ".calculator__display--content__output"
 );
+let input = "";
 
 const inputModifier = (input) => {
   let input_array = input.split("");
@@ -32,7 +33,43 @@ const inputModifier = (input) => {
   return input_array.join("");
 };
 
-let input = "";
+function inputValidator(value) {
+  let last_input = input.slice(-1);
+  let operators = ["+", "-", "*", "/"];
+
+  if (value == "." && last_input == ".") {
+    return false;
+  }
+  if (operators.includes(value)) {
+    if (operators.includes(last_input)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  return true;
+}
+
+function outputClean(output) {
+  let output_string = output.toString();
+  let decimal = output_string.split(".")[1];
+  output_string = output_string.split(".")[0];
+
+  let output_array = output_string.split("");
+
+  if (output_array.length > 3) {
+    for (let i = output_array.length - 3; i > 0; i -= 3) {
+      output_array.splice(i, 0, ",");
+    }
+  }
+
+  if (decimal) {
+    output_array.push(".");
+    output_array.push(decimal);
+  }
+
+  return output_array.join("");
+}
 
 for (let key of keys) {
   const value = key.dataset.key;
@@ -48,7 +85,7 @@ for (let key of keys) {
     } else if (value == "=") {
       let result = eval(input);
 
-      display_output.innerHTML = result;
+      display_output.innerHTML = outputClean(result);
     } else if (value == "brackets") {
       if (
         input.indexOf("(") == -1 ||
@@ -68,8 +105,10 @@ for (let key of keys) {
 
       display_input.innerHTML = inputModifier(input);
     } else {
-      input += value;
-      display_input.innerHTML = inputModifier(input);
+      if (inputValidator(value)) {
+        input += value;
+        display_input.innerHTML = inputModifier(input);
+      }
     }
   });
 }
