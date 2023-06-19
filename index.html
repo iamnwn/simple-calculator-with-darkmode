@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Simple calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="calculator__theme">
+          <button class="toggle" id="toggle">
+            <ion-icon id="light" class="light" name="sunny"></ion-icon>
+            <ion-icon id="dark" class="dark" name="moon"></ion-icon>
+          </button>
+        </div>
+
+        <div class="calculator__display">
+          <div class="calculator__display--content">
+            <div class="calculator__display--content__input">
+              <!-- 120
+              <span class="calculator__display--content__operator">x</span>45 -->
+            </div>
+            <div class="calculator__display--content__output"></div>
+          </div>
+        </div>
+
+        <div class="calculator__keypad">
+          <div data-key="clear" class="key calculator__keypad--btn__clear">
+            AC
+          </div>
+          <div data-key="/" class="key calculator__keypad--btn__action">÷</div>
+          <div data-key="*" class="key calculator__keypad--btn__action">×</div>
+          <div data-key="backspace" class="key calculator__keypad--btn__action">
+            &lt;
+          </div>
+          <div data-key="7" class="key calculator__keypad--btn__number">7</div>
+          <div data-key="8" class="key calculator__keypad--btn__number">8</div>
+          <div data-key="9" class="key calculator__keypad--btn__number">9</div>
+          <div data-key="-" class="key calculator__keypad--btn__action">-</div>
+          <div data-key="4" class="key calculator__keypad--btn__number">4</div>
+          <div data-key="5" class="key calculator__keypad--btn__number">5</div>
+          <div data-key="6" class="key calculator__keypad--btn__number">6</div>
+          <div data-key="+" class="key calculator__keypad--btn__action">+</div>
+          <div data-key="1" class="key calculator__keypad--btn__number">1</div>
+          <div data-key="2" class="key calculator__keypad--btn__number">2</div>
+          <div data-key="3" class="key calculator__keypad--btn__number">3</div>
+          <div data-key="brackets" class="key calculator__keypad--btn__action">
+            ( )
+          </div>
+          <div data-key="0" class="key calculator__keypad--btn__number">0</div>
+          <div data-key="." class="key calculator__keypad--btn__action">.</div>
+          <div data-key="=" class="key calculator__keypad--btn__equal">=</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
