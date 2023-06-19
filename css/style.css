@@ -83,6 +83,11 @@
     inset 2px -2px 5px 3px rgba(0, 0, 0, 0.1);
 }
 
+.toggle:hover {
+  transition: 0.3s;
+  transform: scale(1.08) rotate(10deg);
+}
+
 .toggle.active {
   transition-delay: 0.8s;
   background-color: #043c52;
@@ -187,4 +192,9 @@
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.calculator__keypad div:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
 }
