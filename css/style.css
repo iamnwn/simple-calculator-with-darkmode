@@ -12,6 +12,7 @@
   --clr-text: #0e2954;
   --clr-brackets: #850000;
   --clr-operator: #dc0000;
+  --clr-toggle: #116a7b;
 }
 
 .darkmode {
@@ -26,6 +27,7 @@
   --clr-text: #9db2bf;
   --clr-brackets: #d2001a;
   --clr-operator: #e94560;
+  --clr-toggle: #9db2bf;
 }
 
 * {
@@ -33,7 +35,8 @@
 }
 
 .container {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -48,9 +51,9 @@
 }
 
 .calculator {
-  border-radius: 10px;
+  border-radius: 1rem;
   padding: 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem;
   background: var(--clr-background-cal);
   height: auto;
   width: auto;
@@ -63,16 +66,16 @@
   width: 100%;
   padding: 5px 0px;
   justify-content: flex-end;
-  height: 2.8rem;
+  min-height: 2.5rem;
+  padding-bottom: 1rem;
 }
 
 .toggle {
-  position: relative;
+  position: absolute;
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
   border: none;
-  margin-bottom: 10px;
   transition: 1s;
   cursor: pointer;
   background-color: #ffffff;
@@ -80,6 +83,7 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  color: var(--clr-toggle);
   box-shadow: inset -2px 2px 5px 3px rgba(0, 0, 0, 0.1),
     inset 2px -2px 5px 3px rgba(0, 0, 0, 0.1);
 }
@@ -90,7 +94,7 @@
 }
 
 .toggle.active {
-  transition-delay: 0.8s;
+  transition-delay: 0.5s;
   background-color: #043c52;
   transition: 1s;
   box-shadow: inset -2px 2px 5px 4px rgba(0, 0, 0, 0.1),
@@ -104,8 +108,8 @@
 }
 .light {
   position: absolute;
-  transition-delay: 0.8s;
-  transition: 1s;
+  transition-delay: 0.9s;
+  transition: 0.5s;
   transform: rotate(360deg) scale(0);
 }
 .dark.active {
@@ -115,8 +119,8 @@
 }
 .dark {
   position: absolute;
-  transition-delay: 0.8s;
-  transition: 1s;
+  transition-delay: 0.9s;
+  transition: 0.5s;
   transform: rotate(360deg) scale(0);
 }
 
